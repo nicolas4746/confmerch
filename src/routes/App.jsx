@@ -8,21 +8,24 @@ import Payment from "../containers/Payment";
 import Information from "../containers/Information";
 import NotFound from "../containers/NotFound";
 
+import Layout from "../components/Layout";
 
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Home />}/>      
-        <Route exact path='/checkout' element={<Checkout />} />
-        <Route exact path='/checkout/information' element={<Information />} />
-        <Route exact path='/checkout/payment' element={<Payment />} />
-        <Route exact path='/checkout/success' element={<Success />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout/information" element={<Information />} />
+          <Route path="/checkout/payment" element={<Payment />} />
+          <Route path="/checkout/success" element={<Success />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
-    </BrowserRouter>    
-  );
-};
+    </BrowserRouter>
+  )
+}
 
 export default App;
