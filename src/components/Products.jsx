@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Product from './Product';
 import '../styles/components/Products.css';
+import AppContext from '../context/AppContext';
 
-const Products = ({ products }) => {
+const Products = () => {
+  
+
   return (
     <div className="Products">
       <div className="Products-items">
