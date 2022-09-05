@@ -8,13 +8,13 @@ import Payment from '../containers/Payment';
 import Information from '../containers/Information';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
-import AppContext from "../context/AppContext"
-import useInitialState from "../hooks/useInitialState"
+import AppContext from '../context/AppContext';
+import useInitialState from '../hooks/useInitialState';
 
 const App = () => {
-  const initialState = useInitialState()
+  const initialState = useInitialState();
   return (
-    <AppContext.provider value={initialState}>
+    <AppContext.Provider value={initialState}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -27,7 +27,7 @@ const App = () => {
           </Route>
         </Routes>
       </BrowserRouter>
-    </AppContext.provider>
+    </AppContext.Provider>
   );
 };
 
